@@ -1,6 +1,6 @@
 # Wardriving Arg. Ekoparty 2024 Edition.
 <p align="center">
-  <img src="https://github.com/user-attachments/assets/2450315e-1f21-4973-b06e-85bf772ab182">
+  <a href="https://github.com/TomiGior/Wardriving"><img src="https://github.com/user-attachments/assets/2450315e-1f21-4973-b06e-85bf772ab182"></a>
 </p>
 
 En este repositorio se encontrará la información requerida para realizar el workshop y salida de Wardriving de la Ekoparty (y de casi cualquier otro wardriving).
