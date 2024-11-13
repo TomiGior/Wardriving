@@ -1,3 +1,6 @@
+//Created by S731N for entertainment and educational purposes
+//S731N, the creator of this script, allows the usage of this sourcecode in ethical demonstrations.
+//The creator of this software is not responsible for any damage caused to your board, as this comes with no warranty and was tested only on two boards.
 #include <EEPROM.h>
 #include <WiFi.h> // Use #include <ESP8266WiFi.h> for ESP8266
 #include <WebServer.h>
@@ -7,7 +10,7 @@
 #define EEPROM_WRITE_THRESHOLD 100
 #define MAX_UNPRINTABLE_COUNT 5
 
-const char *ssid = "ESP_Access_Point";
+const char *ssid = "Wardriving 2024";
 String passwords[] = {"wifi", "signal", "router", "access", "network", "security", "wardrive", "antenna", "protocol", "SSID"};
 int passwordIndex = 0;
 int passwordCount = 10;
