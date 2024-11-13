@@ -1,8 +1,8 @@
-# Advice of re-launch:
-This is a new version of an old repository for the same purpose.
-This is actually under migration and construction during my free time. 
-Please be patient, I will upload content soon.
+# Wardriving Arg. Ekoparty 2024 Edition.
+En este repositorio se encontrará la información requerida para realizar el workshop y salida de Wardriving de la Ekoparty (y de casi cualquier otro wardriving).
+El mismo se divide en 3 secciones: 
+- [Instructivos](https://github.com/TomiGior/Wardriving/tree/main/Instructives)
+- [Hardware](https://github.com/TomiGior/Wardriving/tree/main/Hardware)
+- [Extras](https://github.com/TomiGior/Wardriving/tree/main/Extras)
 
-# Wardriving
-This repository is intended to make public my researching on Wardriving and wireless security topics.
-
+El contenido de este repositorio puede ser compartido y utilizado en presentaciones, siempre y cuando se cite esta fuente.
