@@ -1,3 +1,7 @@
+//Created by S731N for the world
+//Please contribute to this project at https://github.com/TomiGior/Wardriving
+//If you like this project, leave a star at the repo and share it with your friends/colleagues
+
 #include <Wire.h>
 #include <LiquidCrystal_PCF8574.h>  // Correct LCD library for ESP8266
 #include <ESP8266WiFi.h>
