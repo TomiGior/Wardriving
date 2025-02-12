@@ -1,6 +1,6 @@
-//Created by S731N for the world
-//Please contribute to this project at https://github.com/TomiGior/Wardriving
-//If you like this project, leave a star at the repo and share it with your friends/colleagues
+// Created by S731N for the world
+// Please contribute to this project at https://github.com/TomiGior/Wardriving
+// If you like this project, leave a star at the repo and share it with your friends/colleagues
 
 #include <Wire.h>
 #include <LiquidCrystal_PCF8574.h>  // Correct LCD library for ESP8266
@@ -104,7 +104,7 @@ void loop() {
   server.handleClient();
 }
 
-// ✅ I2C Scanner
+// I2C Scanner
 void scanI2CDevices() {
   byte error, address;
   int nDevices = 0;
@@ -124,7 +124,7 @@ void scanI2CDevices() {
   if (nDevices == 0) Serial.println("No I2C devices found.");
 }
 
-// ✅ Check First Boot Flag
+// Check First Boot Flag
 bool checkFirstBootFlag() {
   File file = SD.open(FLAG_FILE);
   if (!file) {
@@ -137,7 +137,7 @@ bool checkFirstBootFlag() {
   return (flag == '0');
 }
 
-// ✅ Save First Boot Flag
+// Save First Boot Flag
 void saveFirstBootFlag() {
   File file = SD.open(FLAG_FILE, FILE_WRITE);
   if (file) {
@@ -149,7 +149,7 @@ void saveFirstBootFlag() {
   }
 }
 
-// ✅ Read Password Index from SD
+// Read Password Index from SD
 int readPasswordIndexFromSD() {
   File file = SD.open("/password_index.txt");
   if (!file) {
@@ -162,7 +162,7 @@ int readPasswordIndexFromSD() {
   return index;
 }
 
-// ✅ Save Password Index to SD
+// Save Password Index to SD
 void savePasswordIndexToSD(int index) {
   File file = SD.open("/password_index.txt", FILE_WRITE);
   if (file) {
@@ -174,7 +174,7 @@ void savePasswordIndexToSD(int index) {
   }
 }
 
-// ✅ Display Password on LCD
+// Display Password on LCD
 void displayPassword(String password) {
   lcd.clear();
   lcd.setCursor(0, 0);
@@ -183,7 +183,7 @@ void displayPassword(String password) {
   lcd.print(password);
 }
 
-// ✅ Save Winner to SD (APPENDS without Overwriting)
+// Save Winner to SD (APPENDS without Overwriting)
 void saveWinner(String name) {
   File file = SD.open(WINNERS_FILE, FILE_WRITE);
   if (file) {
@@ -196,7 +196,7 @@ void saveWinner(String name) {
   }
 }
 
-// ✅ Load Winners from SD
+// Load Winners from SD
 String loadWinners() {
   File file = SD.open(WINNERS_FILE);
   if (!file) {
@@ -213,7 +213,7 @@ String loadWinners() {
   return winners;
 }
 
-// ✅ Web Page Handling (Home Page)
+// Web Page Handling (Home Page)
 void handleHome() {
   String html = "<html><body>"
                 "<h1>Welcome to the Scoreboard!</h1>"
@@ -229,7 +229,7 @@ void handleHome() {
   server.send(200, "text/html", html);
 }
 
-// ✅ Web Page Handling (Form Submission)
+// Web Page Handling (Form Submission)
 void handleSubmit() {
   if (server.hasArg("name")) {
     String winnerName = server.arg("name");
@@ -240,7 +240,7 @@ void handleSubmit() {
   server.send(303);
 }
 
-// ✅ Rotate Password on Name Submission
+// Rotate Password on Name Submission
 void rotatePassword() {
   passwordIndex = (passwordIndex + 1) % passwordCount;
   String newPassword = passwords[passwordIndex];
