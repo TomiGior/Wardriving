@@ -4,14 +4,14 @@
 
 #include <Wire.h>
 #include <LiquidCrystal_PCF8574.h>
-#include <ESP8266WiFi.h>
-#include <ESP8266WebServer.h>
+#include <WiFi.h>
+#include <WebServer.h>
 #include <SPI.h>
 #include <SD.h>
 
-#define SD_CS_PIN 15   // SD Card Chip Select (D8 = GPIO15)
-#define SDA_PIN 4      // I2C SDA (D2 = GPIO4)
-#define SCL_PIN 5      // I2C SCL (D1 = GPIO5)
+#define SD_CS_PIN 5    // SD Card Chip Select (Use GPIO5 on ESP32)
+#define SDA_PIN 21     // I2C SDA (ESP32 default GPIO21)
+#define SCL_PIN 22     // I2C SCL (ESP32 default GPIO22)
 #define MAX_CLIENTS 4
 #define FLAG_FILE "/flag.txt"
 #define WINNERS_FILE "/winners.txt"
@@ -24,7 +24,7 @@ String passwords[] = {"wifi2024", "signal99", "router99", "access99", "network99
 int passwordIndex = 0;
 int passwordCount = 10;
 
-ESP8266WebServer server(80);
+WebServer server(80);
 
 // Function Declarations
 void scanI2CDevices();
@@ -43,8 +43,8 @@ void handlePing();  // New function for /ping endpoint
 
 void setup() {
   Serial.begin(115200);
-  
-  Wire.begin(SDA_PIN, SCL_PIN);
+
+  Wire.begin();
   Serial.println("Running I2C Scanner...");
   scanI2CDevices();
 
@@ -255,9 +255,6 @@ void rotatePassword() {
   displayPassword(newPassword);
   sendPasswordSerial(newPassword);
   delay(500);
-  Serial.println("Restarting WiFi Access Point with new password...");
-  WiFi.softAPdisconnect(true);
-  delay(1000);
   WiFi.softAP(ssid, newPassword.c_str(), 6, false, MAX_CLIENTS);
   Serial.print("New Access Point password: ");
   Serial.println(newPassword);
@@ -266,5 +263,5 @@ void rotatePassword() {
 // Handle /ping endpoint
 void handlePing() {
   Serial.println("Received HTTP ping request.");
-  server.send(200, "text/plain", "ESP8266 Alive!");
+  server.send(200, "text/plain", "ESP32 Alive!");
 }
