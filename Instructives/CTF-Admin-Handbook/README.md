@@ -109,7 +109,7 @@ git clone https://github.com/TomiGior/Wardriving.git
 
 After cloning the repo, you must open the sketch using the Arduino IDE. To achieve this chose open file, and there you must select the ESP8266CTF project file stored at …/Extras/ESP8266CTF-Firmware/ESP8266-CTF/ESP8266-CTF.ino
 
-![ESP8266-Arduino-IDE.gif](Media/ESP8266/ESP8266-Arduino-IDE.gif)
+![ESP8266-Arduino-IDE.gif](/Media/ESP8266/ESP8266-Arduino-IDE.gif)
 
 After this, we must plug the ESP8266 NodeMCU dev board to the USB of our machine and install/set the required libraries/boards at Arduino IDE:
 
@@ -129,22 +129,22 @@ https://raw.githubusercontent.com/espressif/arduino-esp32/gh-pages/package_esp32
 
 Then click OK and go to the boards manager. Search for the ESP8266 board and install it:
 
-![ESP8266-Board-Install.gif](Media/ESP8266/ESP8266-Board-Install.gif)
+![ESP8266-Board-Install.gif](/Media/ESP8266/ESP8266-Board-Install.gif)
 
 Then, we must install the libraries for the display. 
 To achieve this, we must search for in on the library manager by typing “LiquidCrystal_PCF8574” by Matthias Hertel:
 
-![Install_LCD_library.png](Media/ESP8266/Install_LCD_library.png)
+![Install_LCD_library.png](/Media/ESP8266/Install_LCD_library.png)
 
 Again, remember I’m using specific hardware. The models of the I2C LCD Screens may vary. If your sketch fails to compile, look-up your module’s information and which library is used for them. Although most libraries made for the various manufacturers of the same kind of modules work exactly the same, some may vary in some functions name, be careful with that when refactoring the code.
 
 After installing this library, we must plug our ESP8266 NodeMCU to our computer’s USB and select the board at the board manager’s quick menu. Ensure that the correct COM port is selected (you can plug and unplug your device to check this):
 
-![Select-Board-8266.gif](Media/ESP8266/Select-Board-8266.gif)
+![Select-Board-8266.gif](/Media/ESP8266/Select-Board-8266.gif)
 
 Then, we can upload the code to the ESP8266 NodeMCU Board:
 
-![Flash8266Firmware.gif](Media/ESP8266/Flash8266Firmware.gif)
+![Flash8266Firmware.gif](/Media/ESP8266/Flash8266Firmware.gif)
 
 After the firmware is flashed, we’re ready to go.
 
