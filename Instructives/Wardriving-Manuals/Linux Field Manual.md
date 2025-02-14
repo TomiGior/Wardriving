@@ -65,17 +65,13 @@ Si ejecutamos el archivo .vbox, se abrirá automáticamente virtualbox y se carg
 Antes de ejecutarla, debemos modificar los recursos de hardware de la misma para poder utilizarla. 
 Para realizar esto, debemos seleccionar la máquina que queremos modificar, luego en configuración como se muestra a continuación.
 
-![1- Seleccionamos la VM. 
-2- Clickeamos en configuración.](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/cd85b298-b7e3-40c9-9c57-3dfbeef1bed6/Untitled.png)
-
-1- Seleccionamos la VM. 
-2- Clickeamos en configuración.
+![Image1](/Media/Instructives/Linux/1.png)
 
 Se nos abrirá el siguiente menú, donde debemos dirigirnos a la sección “Sistema”, dónde podremos aumentar el RAM y vCPU asignados a la máquina virtual en cuestión. 
 Se recomienda asignar la mitad de los recursos de nuestra computadora para un optimo uso.
 Para asignar más núcleos de procesador, nos dirigimos a la solapa “Procesador”.
 
-![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/452278ef-abad-4e6c-9ce4-9813271b6664/Untitled.png)
+![Untitled](/Media/Instructives/Linux/2.png)
 
 Una vez hecho esto, procedemos a dar acceso a los dispositivos USB que vayamos a utilizar para la actividad. 
 Esto lo realizamos mediante la solapa “USB” en este mismo menú:
@@ -84,11 +80,11 @@ Generalmente no nos aparecerá la marca y modelo de nuestra antena, si no el chi
 En este caso se puede observar que la placa que se está agregando es una Ralink.
 Por último, es recomendable que utilicemos el controlador USB 2.0 o superior (esto afectará a todos los dispositivos USB de la máquina virtual).
 
-![Clickeamos en el icono de agregar un filtro USB. Esto realiza la conexión automáticamente, pero en caso de que necesitemos configurar otros parámetros, se puede agregar el filtro manualmente (solo para usuarios avanzados).](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/6db8ae7b-8c98-4e8e-b1f4-65c893839d4b/Untitled.png)
+![Clickeamos en el icono de agregar un filtro USB. Esto realiza la conexión automáticamente, pero en caso de que necesitemos configurar otros parámetros, se puede agregar el filtro manualmente (solo para usuarios avanzados).](/Media/Instructives/Linux/3.png)
 
 Clickeamos en el icono de agregar un filtro USB. Esto realiza la conexión automáticamente, pero en caso de que necesitemos configurar otros parámetros, se puede agregar el filtro manualmente (solo para usuarios avanzados).
 
-![Nuestro NIC cuenta con un chipset Ralink 3060, el cual observamos aquí.](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/1b192d81-289c-4f60-bcae-060faaf01196/Untitled.png)
+![Nuestro NIC cuenta con un chipset Ralink 3060, el cual observamos aquí.](/Media/Instructives/Linux/4.png)
 
 Nuestro NIC cuenta con un chipset Ralink 3060, el cual observamos aquí.
 
@@ -96,7 +92,7 @@ Una vez añadido, lo veremos en la lista de dispositivos que antes estaba vacía
 Si no tiene una tilde marcada a la izquierda en su checkbox, debemos marcarlo para que se conecte a nuestra VM, caso contrario no se conectará. 
 Debemos repetir el mismo proceso para todos los dispositivos que deseamos conectar mediante USB. 
 
-![Aquí observamos que el checkbox tiene su tilde y está listo para ser utilizado.](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/a25513ca-2a6f-4a64-9066-7409f5b8000b/Untitled.png)
+![Aquí observamos que el checkbox tiene su tilde y está listo para ser utilizado.](/Media/Instructives/Linux/5.png)
 
 Aquí observamos que el checkbox tiene su tilde y está listo para ser utilizado.
 
@@ -132,7 +128,7 @@ Para consumir el GPS del servidor que estamos poniendo a su disposición, debemo
 Para esto debemos apagar nuestra máquina virtual, volver al menu de configuración e ir a la sección de red y seleccionar el adaptador de red built-in de nuestro equipo y pasarlo a modo “Bridge” como se muestra en la imagen a continuación. 
 Es importante que el adaptador que estemos utilizando sea el embebido en nuestra maquina y no el NIC que utilizaremos para kismet, caso contrario nos quedaremos sin capacidad de captura. 
 
-![Si lo tienen configurado en inglés, debería decir algo como “Bridge Adaptor”.](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/2622d683-44a1-4402-ac4a-8099d2c74a4e/Untitled.png)
+![Si lo tienen configurado en inglés, debería decir algo como “Bridge Adaptor”.](/Media/Instructives/Linux/6.png)
 
 Si lo tienen configurado en inglés, debería decir algo como “Bridge Adaptor”.
 
@@ -144,7 +140,7 @@ Una vez dentro de Kali Linux, vamos a testear que recibimos correctamente el flu
 La IP indicada puede variar según como configuremos el hotspot los coordinadores.
 Y debemos recibir un output parecido al siguiente:
 
-![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/10eef7c1-74b6-45d9-b19b-c859fa0c3ca2/Untitled.png)
+![Untitled](/Media/Instructives/Linux/7.png)
 
 Si todo está OK y el output se nos muestra como indica la imagen de arriba, procedemos a testear con GPSD. 
 Para ello ejecutaremos los siguientes comandos:
@@ -218,7 +214,7 @@ Ahora iniciamos gpsd con este dispositivo. Para ello escribimos y ejecutamos:
 
 Para probar la conectividad, debemos testear con una herramienta del paquete gpsd-clients llamada gpsmon. Basta con escribir su nombre en la terminal para que nos salte un resultado similar a este:
 
-![No siempre se verá así, de hecho en la mayoría de los dispositivos se verá bastante mal! Pero lo importante son las coordenadas, y que el flujo de información esté llegando correctamente. Para testearlo basta con hacer unos pasos, aunque existen métodos más eficientes que no explicaremos acá.](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/b26ace2a-80d5-4955-b4ce-6959e949dd75/Untitled.png)
+![No siempre se verá así, de hecho en la mayoría de los dispositivos se verá bastante mal! Pero lo importante son las coordenadas, y que el flujo de información esté llegando correctamente. Para testearlo basta con hacer unos pasos, aunque existen métodos más eficientes que no explicaremos acá.](/Media/Instructives/Linux/8.png)
 
 No siempre se verá así, de hecho en la mayoría de los dispositivos se verá bastante mal! Pero lo importante son las coordenadas, y que el flujo de información esté llegando correctamente. Para testearlo basta con hacer unos pasos, aunque existen métodos más eficientes que no explicaremos acá.
 
